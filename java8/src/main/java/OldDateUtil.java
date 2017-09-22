@@ -13,9 +13,9 @@ import java.util.Date;
  * @author muma
  *
  */
-public class DateUtil
+public class OldDateUtil
 {
-	private static final Logger LOGGER = LoggerFactory.getLogger(DateUtil.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(OldDateUtil.class);
 
 	public static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 	public static SimpleDateFormat df = new SimpleDateFormat(

@@ -19,7 +19,7 @@ import java.time.temporal.ChronoUnit;
 /**
  * Java 8 时间工具
  */
-public class Java8Time
+public class TimeUtil8
 {
 
 	public static void main(String[] args)

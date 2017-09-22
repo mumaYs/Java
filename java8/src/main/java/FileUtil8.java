@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * java 8 文件工具类
  */
-public class FileUtil {
+public class FileUtil8 {
 
     /**
      * 非常方便的对文件进行移动操作
