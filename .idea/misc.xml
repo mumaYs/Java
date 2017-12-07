@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/java8/pom.xml" />
         <option value="$PROJECT_DIR$/java9/pom.xml" />
+        <option value="$PROJECT_DIR$/java7/pom.xml" />
       </list>
     </option>
   </component>
