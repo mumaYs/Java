@@ -1,5 +1,7 @@
 package com.ys.alg.sort;
 
+import com.ys.bit.BitUtils;
+
 import java.util.Random;
 
 /**
@@ -82,10 +84,10 @@ public class SwapSort {
         int more = r + 1;
         while (l < more) {
             if (arr[l] < pivot) {
-                Sort.bitSwap(arr, ++less, l++);
+                BitUtils.bitSwap(arr, ++less, l++);
                 //为何此时l++？l从左开始扫，less=l-1，故每次交换++less后l(原来的less+1值<=l值)都小于pivot
             } else if (arr[l] > pivot) {
-                Sort.bitSwap(arr, --more, l);
+                BitUtils.bitSwap(arr, --more, l);
                 //此时交换了more后l的值不确定，故不能++
             } else {
                 l++;

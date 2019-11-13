@@ -1,5 +1,7 @@
 package com.ys.alg.sort;
 
+import com.ys.bit.BitUtils;
+
 /**
  * 选择排序:包括直接选择、堆排序
  *
@@ -37,7 +39,7 @@ public class SelectSort {
                 minIndex = nums[j] < nums[minIndex] ? j : minIndex;
             }
             if (i != minIndex) {
-                Sort.bitSwap(nums, i, minIndex);
+                BitUtils.bitSwap(nums, i, minIndex);
             }
         }
     }
