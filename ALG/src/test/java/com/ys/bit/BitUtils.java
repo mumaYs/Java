@@ -4,6 +4,17 @@ package com.ys.bit;
  * @author ys 2019/11/8 10:39 上午
  */
 public class BitUtils {
+    /**
+     * 求一个数转化为二进制后，包含1的数量
+     */
+    public static int func(int x) {
+        int count = 0;
+        while (x > 0) {
+            count++;
+            x = x & (x - 1);
+        }
+        return count;
+    }
 
     /**
      * 判断一个数是否是2的幂次方
@@ -16,8 +27,8 @@ public class BitUtils {
     }
 
     /**
-     * 获取运算数指定位置的值<br>
-     * 例如： 0000 1011 获取其第 0 位的值为 1, 第 2 位 的值为 0<br>
+     * 获取运算数指定位置的值
+     * 例如： 0000 1011 获取其第 0 位的值为 1, 第 2 位 的值为 0
      *
      * @param source 需要运算的数
      * @param pos    指定位置 (0<=pos<=7)
@@ -29,8 +40,8 @@ public class BitUtils {
 
 
     /**
-     * 将运算数指定位置的值置为指定值<br>
-     * 例: 0000 1011 需要更新为 0000 1111, 即第 2 位的值需要置为 1<br>
+     * 将运算数指定位置的值置为指定值
+     * 例: 0000 1011 需要更新为 0000 1111, 即第 2 位的值需要置为 1
      *
      * @param source 需要运算的数
      * @param pos    指定位置 (0<=pos<=7)
@@ -51,8 +62,8 @@ public class BitUtils {
 
 
     /**
-     * 将运算数指定位置取反值<br>
-     * 例： 0000 1011 指定第 3 位取反, 结果为 0000 0011; 指定第2位取反, 结果为 0000 1111<br>
+     * 将运算数指定位置取反值
+     * 例： 0000 1011 指定第 3 位取反, 结果为 0000 0011; 指定第2位取反, 结果为 0000 1111
      *
      * @param source
      * @param pos    指定位置 (0<=pos<=7)
@@ -65,7 +76,7 @@ public class BitUtils {
 
 
     /**
-     * 检查运算数的指定位置是否为1<br>
+     * 检查运算数的指定位置是否为1
      *
      * @param source 00001011
      *               需要运算的数
@@ -88,27 +99,28 @@ public class BitUtils {
 
         // 取十进制 11 (二级制 0000 1011) 为例子
         byte source = 11;
+        System.out.println(func(source));
 
-        // 取第2位值并输出, 结果应为 0000 1011
-        for (byte i = 7; i >= 0; i--) {
-            System.out.printf("%d ", getBitValue(source, i));
-        }
-
-        // 将第6位置为1并输出 , 结果为 75 (0100 1011)
-        System.out.println("\n" + setBitValue(source, 6, (byte) 1));
-
-        // 将第6位取反并输出, 结果应为75(0100 1011)
-        System.out.println(reverseBitValue(source, 6));
-
-        // 检查第6位是否为1，结果应为false
-        System.out.println(checkBitValue(source, 6));
-
-        // 输出为1的位, 结果应为 0 1 3
-        for (byte i = 0; i < 8; i++) {
-            if (checkBitValue(source, i)) {
-                System.out.printf("%d ", i);
-            }
-        }
+//        // 取第2位值并输出, 结果应为 0000 1011
+//        for (byte i = 7; i >= 0; i--) {
+//            System.out.printf("%d ", getBitValue(source, i));
+//        }
+//
+//        // 将第6位置为1并输出 , 结果为 75 (0100 1011)
+//        System.out.println("\n" + setBitValue(source, 6, (byte) 1));
+//
+//        // 将第6位取反并输出, 结果应为75(0100 1011)
+//        System.out.println(reverseBitValue(source, 6));
+//
+//        // 检查第6位是否为1，结果应为false
+//        System.out.println(checkBitValue(source, 6));
+//
+//        // 输出为1的位, 结果应为 0 1 3
+//        for (byte i = 0; i < 8; i++) {
+//            if (checkBitValue(source, i)) {
+//                System.out.printf("%d ", i);
+//            }
+//        }
 
     }
 }
