@@ -10,13 +10,13 @@ import java.util.Random;
  * @author ys 2019/11/7 2:50 下午
  */
 public class SwapSort {
+    private static int LEAST_NUM = 2;
+
     /**
      * 冒泡基本版
-     *
-     * @param nums
      */
     public static void bubbleSort(int[] nums) {
-        if (nums == null || nums.length < 2) {
+        if (nums == null || nums.length < LEAST_NUM) {
             return;
         }
 
@@ -33,7 +33,7 @@ public class SwapSort {
      * 冒泡优化版:当某趟没有发生交换，即说明数组已经有序，则中断程序
      */
     public static void betterBubbleSort(int[] nums) {
-        if (nums == null || nums.length < 2) {
+        if (nums == null || nums.length < LEAST_NUM) {
             return;
         }
 
@@ -56,7 +56,7 @@ public class SwapSort {
      */
     public static void quickSort(int[] nums, int L, int R) {
         //基线条件
-        if (nums == null || nums.length < 2) {
+        if (nums == null || nums.length < LEAST_NUM) {
             return;
         }
 
