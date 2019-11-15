@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * @author ys 2019/11/8 10:46 上午
  */
-public class SwapSort {
+public class SwapSortTest {
     public static void quickSort(int[] arr, int L, int R) {
         if (arr == null || arr.length < 2) {
             return;
