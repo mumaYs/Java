@@ -1,6 +1,6 @@
-package com.ys.alg.sort;
+package sort;
 
-import com.ys.bit.BitUtils;
+import bit.BitUtils;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package com.ys.bit;
+package bit;
 
 /**
  * @author ys 2019/11/14 5:47 下午

@@ -1,6 +1,6 @@
-package com.ys.bit;
+package bit;
 
-import com.ys.alg.sort.SwapSortTest;
+import sort.SwapSortTest;
 
 /**
  * @author ys 2019/11/7 4:23 下午

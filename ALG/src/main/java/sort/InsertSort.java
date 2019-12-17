@@ -1,4 +1,4 @@
-package com.ys.alg.sort;
+package sort;
 
 /**
  * 插入排序:包括直接插入、希尔排序

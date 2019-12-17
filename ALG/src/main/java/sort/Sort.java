@@ -1,4 +1,4 @@
-package com.ys.alg.sort;
+package sort;
 
 import com.sun.istack.internal.NotNull;
 

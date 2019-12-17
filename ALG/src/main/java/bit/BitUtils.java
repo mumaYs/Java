@@ -1,4 +1,4 @@
-package com.ys.bit;
+package bit;
 
 import com.sun.istack.internal.NotNull;
 

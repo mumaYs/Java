@@ -1,6 +1,6 @@
-package com.ys.alg.sort;
+package sort;
 
-import com.ys.bit.BitUtils;
+import bit.BitUtils;
 
 /**
  * 选择排序:包括直接选择、堆排序

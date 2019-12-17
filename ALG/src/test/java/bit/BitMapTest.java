@@ -1,11 +1,6 @@
-package com.ys.bit;
+package bit;
 
-import com.ys.alg.sort.SwapSortTest;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import sort.SwapSortTest;
 
 /**
  * @author ys 2019/11/15 1:50 下午

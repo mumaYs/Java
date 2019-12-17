@@ -1,8 +1,8 @@
-package com.ys.bit;
+package bit;
 
-import com.ys.bit.BitUtils.*;
+import bit.BitUtils.*;
 
-import static com.ys.bit.BitUtils.*;
+import static bit.BitUtils.*;
 
 /**
  * @author ys 2019/11/13 5:14 下午
