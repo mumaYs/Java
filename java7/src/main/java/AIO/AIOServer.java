@@ -7,6 +7,7 @@ import java.nio.channels.AsynchronousServerSocketChannel;
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
@@ -17,13 +18,13 @@ import java.util.concurrent.TimeoutException;
  * AIO 的核心概念：发起非阻塞方式的 I/O 操作。当 I/O 操作完成时通知。
  * 应用程序的责任就是：什么时候发起操作？ I/O 操作完成时通知谁？
  * AIO 的 I/O 操作，有两种方式的 API 可以进行：Future 方式  和 Callback 方式。
- *
+ * <p>
  * Future方式：即提交一个 I/O 操作请求（accept/read/write），返回一个 Future。
  * 然后您可以对 Future 进行检查（调用get(timeout)），确定它是否完成，或者阻塞 IO 操作直到操作正常完成或者超时异常。
  * 使用 Future 方式很简单，需要注意的是，因为Future.get()是同步的，所以如果不仔细考虑使用场合，
  * 使用 Future 方式可能很容易进入完全同步的编程模式，从而使得异步操作成为一个摆设。
  * 如果这样，那么原来旧版本的 Socket API 便可以完全胜任，大可不必使用异步 I/O.
- *
+ * <p>
  * Callback方式：即提交一个 I/O 操作请求，并且指定一个 CompletionHandler。当异步 I/O 操作完成时，便发送一个通知，
  * 此时这个 CompletionHandler 对象的 completed 或者 failed 方法将会被调用。
  */
@@ -32,8 +33,7 @@ public class AIOServer {
     private AsynchronousServerSocketChannel server;
 
     public AIOServer() throws IOException {
-        server = AsynchronousServerSocketChannel.open().bind(
-                new InetSocketAddress(PORT));
+        server = AsynchronousServerSocketChannel.open().bind(new InetSocketAddress(PORT));
     }
 
     public void startWithFuture() throws InterruptedException,
@@ -57,7 +57,7 @@ public class AIOServer {
                 break;
             }
             readBuf.flip();
-            System.out.println("received: " + Charset.forName("UTF-8").decode(readBuf));
+            System.out.println("received: " + StandardCharsets.UTF_8.decode(readBuf));
             readBuf.clear();
         }
     }
@@ -66,6 +66,7 @@ public class AIOServer {
             ExecutionException, TimeoutException {
         server.accept(null,
                 new CompletionHandler<AsynchronousSocketChannel, Object>() {
+                    @Override
                     public void completed(AsynchronousSocketChannel result, Object attachment) {
                         server.accept(null, this);// 再此接收客户端连接
                         handleWithCompletionHandler(result);
