@@ -38,14 +38,14 @@ public class SwapSort {
         }
 
         for (int i = nums.length - 1; i > 0; i--) {
-            boolean swapped = false;
+            boolean isSorted = true;
             for (int j = 0; j < i; j++) {
                 if (nums[j] > nums[j + 1]) {
                     Sort.swap(nums, j, j + 1);
-                    swapped = true;
+                    isSorted = false;
                 }
             }
-            if (!swapped) {
+            if (isSorted) {
                 break;
             }
         }
