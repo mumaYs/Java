@@ -1,7 +1,5 @@
 package bit;
 
-import com.sun.istack.internal.NotNull;
-
 /**
  * 二进制的最高位是符号位，0表示正，1表示负
  * &--与运算:只要有一个为0，就为0|用途:取相同的位、2的幂等判断
@@ -72,8 +70,8 @@ public class BitUtils {
      * 异或交换
      * 仅当没有相同值交换时使用,否则会返回0
      */
-    public static void bitSwap(@NotNull int[] nums, int i, int j) {
-        if (nums[i] == nums[j]) {
+    public static void bitSwap(int[] nums, int i, int j) {
+        if (nums == null || nums[i] == nums[j]) {
             return;
         }
         nums[i] = nums[j] ^ nums[i];
